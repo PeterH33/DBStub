@@ -30,7 +30,7 @@ if ($DBConnect == false)
         print"<tr><th>Count</th><th>Artist</th><th>CD Name</th><th>Favorite Song</th><tr>";
         while($row = mysqli_fetch_assoc($queryResult)){
             //this part is dynamic
-            print"<tr><td>{$row['count']}</td><td>{$row['artist']}</td><td>{$row['cd']}</td><td>{$row['song']}</td></tr>"
+            print"<tr><td>{$row['count']}</td><td>{$row['artist']}</td><td>{$row['cd']}</td><td>{$row['song']}</td></tr>";
         }
     } else {
         print"There are no results";
