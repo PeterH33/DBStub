@@ -28,12 +28,18 @@ if ($DBConnect == false)
         print"Here is a list of your songs";
         print"<table width = '100%' border = '1'>";
         print"<tr><th>Count</th><th>Artist</th><th>CD Name</th><th>Favorite Song</th><tr>";
-        
+        while($row = mysqli_fetch_assoc($queryResult)){
+            //this part is dynamic
+            print"<tr><td>{$row['count']}</td><td>{$row['artist']}</td><td>{$row['cd']}</td><td>{$row['song']}</td></tr>"
+        }
     } else {
         print"There are no results";
     }
+    mysqli_free_result($queryResult);
+
 
 }
+mysqli_close($DBConnect);
 	
 	
 	
