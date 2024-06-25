@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    <!-- This is neat, we can include views defined elsewhere with this for a consistent pattern instead of rewritting things -->
 <?php include 'include.htm';?>
 <h1>Song_Input.php</h1>
 <h2>Just an input page</h2>
