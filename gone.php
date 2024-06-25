@@ -6,7 +6,7 @@
 <body>
 <?php include 'include.htm';?>
 <h1>Gone.php</h1>
-<h2>Record has been deleted</h2>
+
 <?php
 //Make a db connection
 $DBConnect = mysqli_connect("127.0.0.1", "testTwo", "pword", "test2");
@@ -22,8 +22,13 @@ if ($DBConnect == false)
     $deleteThis = sanitizeString($_POST['record']);
     $SQLString = "delete from $tableName where count = '$deleteThis'";
     $queryResult = mysqli_query ($DBConnect, $SQLString);
-
+    if(mysqli_num_rows($queryResult) > 0){
+        print"<h2>Record has been deleted</h2>";
+    } else {
+        print"<h2>That record does not exist</h2>";
+    }
     //If statement to check for failed result
+
 
     //************New code */
 
